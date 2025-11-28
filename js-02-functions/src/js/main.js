@@ -66,7 +66,7 @@ sintaxis:
     };
 */
 
-console.log( printFullName("Johan", "Gonzalez") );
+
 
 
 /**
@@ -77,4 +77,81 @@ console.log( printFullName("Johan", "Gonzalez") );
  */
 const printFullName = function (firstName, lastName) {
   return `${firstName} ${lastName} estudiante de la Ch62`;
+};
+console.log( printFullName("Johan", "Gonzalez") );
+
+const printArrowName = (firstName, lastName) => `${firstName} ${lastName} estudiante de la Ch62`;
+console.log( printArrowName("Enrique", "Berman") );
+
+/*
+ ------------ Parámetros por defecto -----------------------
+             (default parameters)
+Inicializa un parámetro de la función, si no se envía el argumento cuando se invoca
+*/
+const makeCoffe = ( type="Expresso") => `Preparando un café ${type}`;
+console.log( makeCoffe("Latte") ); // Preparando un café Latte
+
+//Area de rectangulo
+
+let rectangleArea = ( width = 1, height = 1 ) => `El área del rectangulo es: ${width * height}`;
+console.log( rectangleArea(5, 3) ); // El área del rectangulo es: 15
+
+//Funciones callback:
+/*
+ Una función que se pasa como argumento a otra función
+ y se ejecuta dentro de esa función.
+*/
+/*
+  Pase de datos:
+    - Por valor: Se crea una copia independiente del dato. 
+      Si modificas la copia, el original NO cambia.
+    - Por referencia: Se pasa la dirección de memoria (referencia), 
+      no el dato en sí. Si modificas algo a través de esa referencia, el original SÍ cambia.
+*/
+
+const calculate = (num1, num2, opFunction) => {
+  return opFunction(num1, num2);
+};
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => a / b;
+const expo = (a, b) => a ** b;
+const mod = (a, b) => {if (a%b == 0) {
+  return `${a} es divisible entre ${b}`;
+}
+  else {
+    return `${a} no es divisible entre ${b}`;
+    }};
+
+console.log(`Realizando una suma: ${calculate(10, 5, add)}`);
+console.log(`Realizando una resta: ${calculate(10, 5, subtract)}`);
+console.log(`Realizando una multiplicación: ${calculate(10, 5, multiply)}`);
+console.log(`Realizando una división: ${calculate(10, 5, divide)}`);
+console.log(`Realizando una exponenciación: ${calculate(3, 3, (a, b) => a ** b)}`);
+console.log(`Realizando módulo para saber si es divisible entre 3: ${calculate(10, 3, mod)}`);
+
+var a = 10;  //variable global, no variable de funcion
+let b = 20;
+const c = 30;
+const d = 40;
+const e = 50;
+const f = 60;
+const g = 70; 
+
+const cambiarValores = (a, b, c) => {  
+
+  /*
+
+  Muchas instrucciones
+
+  */
+    a = 100; 
+    b = 200; 
+    c = 300; 
+    var d = 400; 
+    let e = 500; 
+    const f = 600; 
+    console.log (a,b,c);
+
 };
